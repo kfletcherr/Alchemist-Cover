@@ -17,7 +17,7 @@ body {
     opacity: 1;
     transform: translate(-50%, -50%);
     z-index: 1;
-    animation: fadeIn 3s ease-in forwards;
+    animation: fadeIn 2s ease-in forwards;
 }
 
 .book-cover {
@@ -76,7 +76,7 @@ body {
     border-radius: 20%;
     transform: translate(-50%, -50%);
     opacity: 0;
-    animation: fadeIn 3s ease-in forwards, spin 15s linear infinite;
+    animation: fadeIn 2s ease-in forwards, spin 15s linear infinite;
 }
 
 @keyframes fadeIn {
