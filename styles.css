@@ -1,0 +1,214 @@
+body {
+    background: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.top-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 215px;
+    height: 215px;
+    background: url('images/Center.png') no-repeat center center;
+    background-size: cover;
+    opacity: 1;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    animation: fadeIn 3s ease-in forwards;
+}
+
+.book-cover {
+    position: relative;
+    width: 400px;
+    height: 600px;
+    background: url('images/ABack.jpeg');
+    background-size: cover;
+    background-position: center;
+    border: 15px solid #bd291d;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Goudy Bookletter 1911', serif;
+    color: #fabf38;
+    overflow: hidden;
+    z-index: 2;
+    box-sizing: border-box; 
+}
+
+
+
+.border-frame {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border: 3px solid #bd291d;
+}
+
+.title {
+    font-size: 24px;
+    letter-spacing: 2px;
+    color: black;
+}
+
+.main-title {
+    font-size: 36px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: black;
+}
+
+
+.golden-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 320px;
+    height: 320px;
+    background-color: #fabf38;
+    background: url('images/Ring.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 20%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    animation: fadeIn 3s ease-in forwards, spin 15s linear infinite;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.author {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    font-weight: bold;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    animation: typing 2s steps(100) 1s forwards;
+}
+
+@keyframes typing {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+.bird {
+    position: absolute;
+    top: 10px;
+    width: 65px;
+    height: 65px;
+    background: url('images/ybird.png') no-repeat center / contain;
+}
+
+.bird-left {
+    left: 20px;
+    animation: flyInLeft 5s ease-in-out forwards;
+}
+
+.bird-right {
+    right: 20px;
+    opacity: 0; 
+    animation: flyInRight 5s ease-in-out forwards;
+    animation-delay: 1s; 
+}
+
+@keyframes flyInLeft {
+    0% {
+        transform: translateX(-1000%) translateY(20px);
+    }
+    50% {
+        transform: translateX(450%) translateY(-20px) scaleX(-1);
+    }
+    100% {
+        transform: translateX(0) translateY(0);
+    }
+}
+
+@keyframes flyInRight {
+    0% {
+        opacity: 0; 
+        transform: translateX(1000%) translateY(-60px);
+    }
+    10% {
+        opacity: 1; 
+    }
+    50% {
+        transform: translateX(-450%) translateY(90px);
+        opacity: 1
+    }
+    100% {
+        transform: translateX(0) translateY(0) scaleX(-1);
+        opacity: 1
+    }
+}
+
+
+
+.pyramid {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 50px solid #fabf38;
+    z-index: 3;
+    animation: fadeIn 3s ease-in forwards;
+
+}
+
+.pyramid.left {
+    bottom: 18px;
+    left: 15px;
+}
+.pyramid.left2 {
+    bottom: 18px;
+    left: 50px;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 30px solid #fabf38;
+}
+
+.pyramid.right {
+    bottom: 18px;
+    right: 15px;
+}
+
+.pyramid.right2 {
+    bottom: 18px;
+    right: 50px;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 30px solid #fabf38;
+}
+
+.book-cover:hover .golden-circle {
+    animation: fadeIn 3s ease-in forwards, spin 2s linear infinite; 
+}
+
